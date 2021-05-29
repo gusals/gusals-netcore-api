@@ -1,0 +1,26 @@
+{
+    "name": "gusals-netcore-api",
+    "version": "1.0.0",
+    "author": "gusals@gmail.com",
+    "license": "ISC",
+    "scripts": {
+        "preinstall": "dotnet tool restore"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/gusals/gusals-netcore-api.git"
+    },
+    "bugs": {
+        "url": "https://github.com/gusals/gusals-netcore-api/issues"
+    },
+    "homepage": "https://github.com/gusals/gusals-netcore-api#readme",
+    "devDependencies": {
+        "husky": "^6.0.0",
+        "lint-staged": "^11.0.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged -r"
+        }
+    }
+}

@@ -1,0 +1,455 @@
+﻿root = true
+
+[*.cs]
+
+#### Core EditorConfig Options ####
+
+# Indentation and spacing: 들여쓰기 및 간격
+indent_size = 4
+indent_style = space
+tab_width = 4
+
+# New line preferences: 줄 바꿈 설정
+end_of_line = crlf
+insert_final_newline = false
+
+#### .NET formatting settings ####
+
+# Organize usings: using 구성
+## true - System.* using 지시문을 사전순으로 정렬하고 다른 using 지시문 앞에 배치
+## false - System.* using 지시문을 다른 using 지시문 앞에 배치하지 ‘않음’
+dotnet_sort_system_directives_first = true
+## true - using 지시문 그룹 사이에 빈 줄을 넣음
+## false - using 지시문 그룹 사이에 빈 줄을 넣지 ‘않음’
+dotnet_separate_import_directive_groups = false
+
+#### .NET Coding Conventions ####
+
+# this. and Me. preferences: This. 및 Me. 한정자
+# rule id: IDE0003;IDE0009;
+## true - 이벤트 앞에 this.(C#) 또는 Me.추가
+## false - 이벤트 앞에 this. 또는 Me.를 추가하지 ‘않음’
+dotnet_style_qualification_for_event = false:suggestion
+## true - 필드 앞에 this.(C#) 또는 Me.추가
+## false - 필드 앞에 this. 또는 Me.를 추가하지 ‘않음’
+dotnet_style_qualification_for_field = false:suggestion
+## true - 메소드 앞에 this.(C#) 또는 Me.추가
+## false - 메소드 앞에 this. 또는 Me.를 추가하지 ‘않음’
+dotnet_style_qualification_for_method = false:suggestion
+## true - 속성 앞에 this.(C#) 또는 Me.추가
+## false - 속성 앞에 this. 또는 Me.를 추가하지 ‘않음’
+dotnet_style_qualification_for_property = false:suggestion
+
+# Language keywords vs BCL types preferences: 형식 참조를 위한 프레임워크 형식 이름 대신 언어 키워드
+## rule id: IDE0012;IDE0014;
+## true - 자신을 나타내는 키워드가 포함된 형식의 경우, 로컬 변수, 메서드 매개 변수 및 클래스 멤버에 형식 이름 대신 언어 키워드 사용
+## false - 로컬 변수, 메서드 매개 변수 및 클래스 멤버에 언어 키워드 대신 형식 이름 사용
+dotnet_style_predefined_type_for_locals_parameters_members = true:suggestion
+## rule id: IDE0013;IDE0015;
+## true - 자신을 나타내는 키워드가 포함된 형식의 경우, 멤버 액세스 식에 형식 이름 대신 언어 키워드 사용
+## false - 멤버 액세스 식에 언어 키워드 대신 형식 이름 사용
+dotnet_style_predefined_type_for_member_access = true:suggestion
+
+# Parentheses preferences: 괄호 기본 설정
+# rule id: IDE0047;
+## always_for_clarity - 산술 연산자(*, /, %, +, -, <<, >>, &, ^, |) 우선 순위를 명확하게 나타내기 위해 괄호를 사용
+## never_if_unnecessary - 산술 연산자(*, /, %, +, -, <<, >>, &, ^, |) 우선 순위가 명확하면 괄호를 사용하지 ‘않음’
+dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity:suggestion
+## always_for_clarity - 기타 이항 연산자(&&, ||, ??) 우선 순위를 명확하게 나타내기 위해 괄호를 사용
+## never_if_unnecessary - 기타 이항 연산자(&&, ||, ??) 우선 순위가 명확하면 괄호를 사용하지 ‘않음’
+dotnet_style_parentheses_in_other_binary_operators = always_for_clarity:suggestion
+## always_for_clarity - 연산자 우선 순위를 명확하게 나타내기 위해 괄호를 사용
+## never_if_unnecessary - 연산자 우선 순위가 명확하면 괄호를 사용하지 ‘않음’
+dotnet_style_parentheses_in_other_operators = never_if_unnecessary:suggestion
+## always_for_clarity - 관계 연산자(>, <, <=, >=, is, as, ==, !=) 우선 순위를 명확하게 나타내기 위해 괄호를 사용
+## never_if_unnecessary - 관계 연산자(>, <, <=, >=, is, as, ==, !=) 우선 순위가 명확하면 괄호를 사용하지 ‘않음’
+dotnet_style_parentheses_in_relational_binary_operators = always_for_clarity:suggestion
+
+# Modifier preferences: 한정자 기본 설정
+## rule id: IDE0040;
+## always - 접근성 한정자 지정
+## for_non_interface_members - 공용 인터페이스 멤버를 제외하고 접근성 한정자 선언 (이는 always와 같으며 C#에서 기본 인터페이스의 메서드를 추가할 경우 향후 교정을 위해 추가)
+## never - 접근성 한정자 지정 안함
+## omit_if_default - 기본 한정자인 경우를 제외하고 접근성 한정자 지정
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:suggestion
+## Field preferences: 필드 기본 설정
+## rule id: IDE0044;
+## true - 인라인 또는 생성자 내부에서만 할당되는 경우, readonly로 필드를 표시
+## false - readonly로 필드를 표시할지 여부에 대한 기본 설정을 지정하지 ‘않음’
+dotnet_style_readonly_field = true:suggestion
+
+# Expression-level preferences: 식 수준 기본 설정
+## rule id: IDE0028;
+## true - 가능한 경우 컬렉션 이니셜라이저를 사용하여 컬렉션을 초기화
+## false - 컬렉션 이니셜라이저를 사용하여 컬렉션을 초기화하지 ‘않음’
+dotnet_style_collection_initializer = true:suggestion
+## rule id: IDE0033;
+## true - ItemX 속성보다 튜플 이름을 선호
+## false - 튜플 이름보다 ItemX 속성을 선호
+dotnet_style_explicit_tuple_names = true:suggestion
+## rule id: IDE0017;
+## true - 가능한 경우 개체 이니셜라이저를 사용하여 개체를 초기화
+## false - 개체 이니셜라이저를 사용하여 개체를 초기화하지 ‘않음’
+dotnet_style_object_initializer = true:suggestion
+## rule id: IDE0032;
+## true - 프라이빗 지원 필드가 있는 속성보다 자동 속성을 선호
+## false - 자동 속성보다 프라이빗 지원 필드가 있는 속성을 선호
+dotnet_style_prefer_auto_properties = true:suggestion
+## rule id: IDE0054;
+## true - 복합 할당 식을 선호
+## false - 복합 할당 식을 선호하지 ‘않음’
+dotnet_style_prefer_compound_assignment = true:suggestion
+## rule id: IDE0045;
+## true -  if-else 문보다 3개로 구성된 조건을 사용한 할당을 선호
+## false - 3개로 구성된 조건보다 if-else 문을 사용한 할당을 선호
+dotnet_style_prefer_conditional_expression_over_assignment = true:suggestion
+## rule id: IDE0046;
+## true -  반환 문에 if-else 문보다 3개로 구성된 조건을 사용
+## false - 반환 문에 3개로 구성된 조건보다 if-else 문을 사용
+dotnet_style_prefer_conditional_expression_over_return = true:suggestion
+## rule id: IDE0037;
+## true -  유추된 무명 형식 멤버 이름을 선호
+## false - 명시적 무명 형식 멤버 이름을 선호
+dotnet_style_prefer_inferred_anonymous_type_member_names = true:suggestion
+## rule id: IDE0037;
+## true -  유추된 튜플 요소 이름을 선호
+## false - 명시적 튜플 요소 이름을 선호
+dotnet_style_prefer_inferred_tuple_names = true:suggestion
+## 아직 정의되지 않음
+dotnet_style_prefer_simplified_interpolation = true:suggestion
+
+# Null-checking preferences: Null 검사 기본 설정
+## rule id: IDE0029;
+## true - 3개로 구성된 연산자 검사보다 null 병합 식을 선호
+## false - null 병합 식보다 3개로 구성된 연산자 검사를 선호
+dotnet_style_coalesce_expression = true:suggestion
+## rule id: IDE0031;
+## true - 가능한 경우 null 조건 연산자를 사용
+## false - 가능한 경우 3개로 구성된 null 검사를 사용
+dotnet_style_null_propagation = true:suggestion
+## rule id: IDE0041;
+## true - 참조 같음 메서드보다 is null 검사를 선호
+## false - is null 검사보다 참조 같음 메서드를 선호
+dotnet_style_prefer_is_null_check_over_reference_equality_method = true:suggestion
+
+#### .NET code quality settings ####
+
+# Parameter preferences: 매개 변수 기본 설정
+# rule id: IDE0060;
+# all - 사용되지 않는 매개 변수가 포함된 모든 액세스 가능성의 메서드를 플래그 지정
+# non_public - 사용되지 않는 매개 변수가 포함된 비공용 메서드만 플래그 지정
+dotnet_code_quality_unused_parameters = all:suggestion
+
+#### C# Coding Conventions ####
+
+# var preferences: 암시적 및 명시적 형식
+# rule id: IDE0007;IDE0008;
+## true - 다른 코드 스타일 규칙으로 재정의되지 않은 경우 항상 명시적 형식보다 var을 선호
+## false - 다른 코드 스타일 규칙으로 재정의되지 않은 경우 항상 var보다 명시적 형식을 선호
+csharp_style_var_elsewhere = true:suggestion
+## true - int 등의 기본 제공 시스템 형식을 사용한 변수 선언에 var을 사용
+## false - int 등의 기본 제공 시스템 형식을 사용한 변수 선언에 var보다 명시적 형식을 선호
+csharp_style_var_for_built_in_types = true:suggestion
+## true - 선언 식의 오른쪽에서 형식이 이미 언급된 경우 var을 선호
+## false - 선언 식의 오른쪽에서 형식이 이미 언급된 경우 var보다 명시적 형식을 선호
+csharp_style_var_when_type_is_apparent = true:suggestion
+
+# Expression-bodied members: 식 본문 멤버
+## rule id: IDE0027;
+## true - 접근자에 식 본문을 사용
+## when_on_single_line - 한 줄이 되는 경우 접근자에 식 본문을 사용
+## false - 접근자에 블록 본문을 사용
+csharp_style_expression_bodied_accessors = when_on_single_line:suggestion
+## rule id: IDE0021;
+## true - 생성자에 식 본문을 사용
+## when_on_single_line - 한 줄이 되는 경우 생성자에 식 본문을 사용
+## false - 생성자에 블록 본문을 사용
+csharp_style_expression_bodied_constructors = when_on_single_line:suggestion
+## rule id: IDE0026;
+## true - 인덱서에 식 본문을 사용
+## when_on_single_line - 한 줄이 되는 경우 인덱서에 식 본문을 사용
+## false - 인덱서에 블록 본문을 사용
+csharp_style_expression_bodied_indexers = when_on_single_line:suggestion
+## rule id: IDE0053;
+## true - 람다에 식 본문을 사용
+## when_on_single_line - 한 줄이 되는 경우 람다에 식 본문을 사용
+## false - 람다에 블록 본문을 사용
+csharp_style_expression_bodied_lambdas = when_on_single_line:suggestion
+## rule id: IDE0061;
+## true - 로컬 함수에 식 본문을 사용
+## when_on_single_line - 한 줄이 되는 경우 로컬 함수에 식 본문을 사용
+## false - 로컬 함수에 블록 본문을 사용
+csharp_style_expression_bodied_local_functions = when_on_single_line:suggestion
+## rule id: IDE0022;
+## true - 메서드에 식 본문을 사용
+## when_on_single_line - 한 줄이 되는 경우 메서드에 식 본문을 사용
+## false - 메서드에 블록 본문을 사용
+csharp_style_expression_bodied_methods = when_on_single_line:suggestion
+## rule id: IDE0023;IDE0024;
+## true - 연산자에 식 본문을 사용
+## when_on_single_line - 한 줄이 되는 경우 연산자에 식 본문을 사용
+## false - 연산자에 블록 본문을 사용
+csharp_style_expression_bodied_operators = when_on_single_line:suggestion
+## rule id: IDE0025;
+## true - 속성에 식 본문을 사용
+## when_on_single_line - 한 줄이 되는 경우 속성에 식 본문을 사용
+## false - 속성에 블록 본문을 사용
+csharp_style_expression_bodied_properties = when_on_single_line:suggestion
+
+# Pattern matching preferences: 패턴 일치
+## rule id: IDE0019;
+## true - 항목이 특정 형식인지 확인하는 경우 null 검사가 포함된 as 식보다 패턴 일치를 선호
+## false - 항목이 특정 형식인지 확인하는 경우 패턴 일치보다 null 검사가 포함된 as 식을 선호
+csharp_style_pattern_matching_over_as_with_null_check = true:suggestion
+## rule id: IDE0020;
+## true - 형식 캐스트가 포함된 is 식보다 패턴 일치를 선호
+## false - 패턴 일치보다 형식 캐스트가 포함된 is 식을 선호
+csharp_style_pattern_matching_over_is_with_cast_check = true:suggestion
+
+# Inlined variable declarations: 인라인 변수 선언
+# rule id: IDE0018;
+# true - 가능한 경우 메서드 호출의 인수 목록에서 out 변수를 인라인으로 선언
+# false - 메서드 호출 전에 out 변수를 선언
+csharp_style_inlined_variable_declaration = true:suggestion
+
+# Expression-level preferences: 식 수준 기본 설정
+# rule id: IDE0034;
+# true - default(T)보다 default를 선호
+# false - default보다 default(T)를 선호
+csharp_prefer_simple_default_expression = true:suggestion
+
+# Null-checking preferences: C# null 검사 기본 설정
+## rule id: IDE0016;
+## true - throw 문 대신 throw 식을 사용
+## false - throw 식 대신 throw 문을 사용
+csharp_style_throw_expression = true:suggestion
+## rule id: IDE0041;
+## true - null 검사를 수행하는 대신 람다 식 호출 시 조건부 병합 연산자(?.)를 사용
+## false - 조건부 병합 연산자(?.)를 사용하는 대신 람다 식 호출 전에 null 검사를 수행
+csharp_style_conditional_delegate_call = true:suggestion
+
+# Modifier preferences: 한정자 기본 설정
+# rule id: IDE0036;
+# 우선 순위 설정
+csharp_preferred_modifier_order = public,private,protected,internal,static,extern,new,virtual,abstract,sealed,override,readonly,unsafe,volatile,async:suggestion
+
+# Code-block preferences: 코드 블록 기본 설정
+# rule id: IDE0011;
+# true - 코드 한 줄에서도 중괄호를 선호
+# false - 허용되는 경우 중괄호를 선호하지 '않음'
+# when_multiline - 여러 줄에 중괄호를 사용
+csharp_prefer_braces = false:suggestion
+
+# Unused value preferences: 사용되지 않는 값 기본 설정
+## rule id: IDE0058;
+## discard_variable - 사용되지 않는 식을 무시 항목으로 할당
+## unused_local_variable - 사용되지 않는 식을 지역 변수로 할당
+csharp_style_unused_value_expression_statement_preference = discard_variable:silent
+## rule id: IDE0059;
+## discard_variable - 사용되지 않는 값을 할당 시 무시 항목을 사용
+## unused_local_variable - 사용되지 않는 값을 할당 시 지역 변수를 사용
+csharp_style_unused_value_assignment_preference = discard_variable:suggestion
+
+# Index and range preferences: 인덱스 및 범위 기본 설정
+## rule id: IDE0056;
+## true - 컬렉션의 끝에서 인덱스를 계산할 때 ^ 연산자를 사용
+## false - 컬렉션의 끝에서 인덱스를 계산할 때 ^ 연산자를 사용하지 '않음'
+csharp_style_prefer_index_operator = true:suggestion
+## rule id: IDE0057;
+## true - 컬렉션의 조각을 추출할 때 범위 연산자 ..을 사용
+## false - 컬렉션의 조각을 추출할 때 범위 연산자 ..을 사용하지 '않음'
+csharp_style_prefer_range_operator = true:suggestion
+
+# Miscellaneous preferences: 기타 기본 설정
+## rule id: IDE0066;
+## true - switch 식을 사용(C# 8.0에서 도입됨)
+## false - switch 문을 사용
+csharp_style_prefer_switch_expression = true:suggestion
+## rule id: IDE0062;
+## true - 로컬 함수가 static으로 표시
+## false - 로컬 함수가 static으로 표시되도록 하지 '않음'
+csharp_prefer_static_local_function = true:suggestion
+## rule id: IDE0063;
+## true - 단순 using 문을 사용
+## false - 단순 using 문을 사용하지 '않음'
+csharp_prefer_simple_using_statement = true:suggestion
+## rule id: IDE0042;
+## true - 분해된 변수 선언을 선호
+## false - 변수 선언에서 분해를 선호하지 '않음'
+csharp_style_deconstructed_variable_declaration = true:suggestion
+## rule id: IDE0039;
+## true - 익명 함수보다 로컬 함수를 선호
+## false - 로컬 함수보다 익명 함수를 선호
+csharp_style_pattern_local_over_anonymous_function = true:suggestion
+## rule id: IDE0065;
+## outside_namespace - using 지시문이 네임스페이스 밖에 위치
+## inside_namespace - using 지시문이 네임스페이스 안에 위치
+csharp_using_directive_placement = outside_namespace:suggestion
+
+#### C# Formatting Rules ####
+
+# New line preferences: 줄 바꿈 옵션
+## true - catch 문을 새 줄에 배치
+## false - catch 문을 동일한 줄에 배치
+csharp_new_line_before_catch = true
+## true - else 문을 새 줄에 배치
+## false - else 문을 동일한 줄에 배치
+csharp_new_line_before_else = true
+## true - finally 문을 닫는 괄호 뒤의 새 줄에 배치
+## false - finally 문을 닫는 괄호와 동일한 줄에 배치
+csharp_new_line_before_finally = true
+## true - 무명 형식의 멤버를 새 줄에 배치
+## false - 무명 형식의 멤버를 동일한 줄에 배치
+csharp_new_line_before_members_in_anonymous_types = true
+## true - 개체 이니셜라이저의 멤버를 새 줄에 배치
+## false - 개체 이니셜라이저의 멤버를 동일한 줄에 배치
+csharp_new_line_before_members_in_object_initializers = true
+## all - 모든 식에서 중괄호를 새 줄에 배치(Allman 스타일)
+## none - 모든 식에서 중괄호를 동일한 줄에 배치해야 합니다(K&R)
+## accessors, anonymous_methods, anonymous_types, control_blocks, events, indexers, lambdas, local_functions, methods, object_collection_array_initializers, properties, types - 지정된 코드 요소에서 중괄호를 새 줄에 배치해야 합니다(Allman 스타일)
+csharp_new_line_before_open_brace = all
+## true - 쿼리 식 절의 요소를 새 줄에 배치
+## false - 쿼리 식 절의 요소를 동일한 줄에 배치
+csharp_new_line_between_query_expression_clauses = true
+
+# Indentation preferences: 들여쓰기 옵션
+## true - c# 블록 컨텐츠를 들여쓰기
+## false - c# 블록 컨텐츠를 들여 쓰지 '않음'
+csharp_indent_block_contents = true
+## true - c# 중괄호를 들여쓰기
+## false - c# 중괄호를 들여 쓰지 '않음'
+csharp_indent_braces = false
+## true - switch case 콘텐츠를 들여쓰기
+## false - switch case 콘텐츠를 들여 쓰지 '않음'
+csharp_indent_case_contents = true
+## true - case 콘텐츠 중괄호를 들여쓰기
+## false - case 콘텐츠 중괄호를 들여 쓰지 '않음'
+csharp_indent_case_contents_when_block = true
+## flush_left - 레이블이 가장 왼쪽 열에 배치
+## one_less_than_current - 레이블이 현재 컨텍스트보다 한 수준 더 들여쓰기에 배치
+## no_change - 레이블이 현재 컨텍스트와 동일한 들여쓰기에 배치
+csharp_indent_labels = one_less_than_current
+## true - switch 레이블을 들여쓰기
+## false - switch 레이블을 들여 쓰지 '않음'
+csharp_indent_switch_labels = true
+
+# Space preferences: 간격 옵션
+## true - 캐스트와 값 사이에 공백 문자를 배치
+## false - 캐스트와 값 사이에서 공백을 제거
+csharp_space_after_cast = false
+## true - 형식 선언에서 베이스 또는 인터페이스의 콜론 뒤에 공백 문자를 배치
+## false - 형식 선언에서 베이스 또는 인터페이스의 콜론 뒤에서 공백을 제거
+csharp_space_after_colon_in_inheritance_clause = true
+## true - 쉼표 뒤에 공백을 삽입
+## false - 쉼표 뒤의 공백을 제거
+csharp_space_after_comma = true
+## true - 점 뒤에 공백을 삽입
+## false - 점 뒤의 공백을 제거
+csharp_space_after_dot = false
+## true - for 루프와 같은 제어 흐름 문의 키워드 뒤에 공백 문자를 배치
+## false - for 루프와 같은 제어 흐름 문의 키워드 뒤에서 공백을 제거
+csharp_space_after_keywords_in_control_flow_statements = true
+## true - for 문의 각 세미콜론 뒤에 공백을 삽입
+## false - for 문의 각 세미콜론 뒤에서 공백을 제거
+csharp_space_after_semicolon_in_for_statement = true
+## before_and_after - 이항 연산자 앞뒤에 공백을 삽입
+## none - 이항 연산자 앞뒤의 공백을 제거
+## ignore - 이항 연산자 주위의 공백을 무시
+csharp_space_around_binary_operators = before_and_after
+## ignore - 선언문에서 추가 공백 문자를 제거하지 '않음'
+## false - 선언문에서 추가 공백 문자를 제거
+csharp_space_around_declaration_statements = false
+## true - 형식 선언에서 베이스 또는 인터페이스의 콜론 앞에 공백 문자를 배치
+## false - 형식 선언에서 베이스 또는 인터페이스의 콜론 앞에서 공백을 제거
+csharp_space_before_colon_in_inheritance_clause = true
+## true - 쉼표 앞에 공백을 삽입
+## false - 쉼표 앞에서 공백을 제거
+csharp_space_before_comma = false
+## true - 점 앞에 공백을 삽입
+## false - 점 앞에서 공백을 제거
+csharp_space_before_dot = false
+## true - 여는 대괄호 [ 앞에 공백을 삽입
+## false - 여는 대괄호 [ 앞에서 공백을 제거
+csharp_space_before_open_square_brackets = false
+## true - for 문의 각 세미콜론 앞에 공백을 삽입
+## false - for 문의 각 세미콜론 앞에서 공백을 제거
+csharp_space_before_semicolon_in_for_statement = false
+## true - 빈 대괄호 [ ] 사이에 공백을 삽입
+## false - 빈 대괄호 [] 사이에서 공백을 제거
+csharp_space_between_empty_square_brackets = false
+## true - 빈 인수 목록 괄호 안에 공백을 삽입
+## false - 빈 인수 목록 괄호 안의 공백을 제거
+csharp_space_between_method_call_empty_parameter_list_parentheses = false
+## true - 메서드 호출 이름과 여는 괄호 사이에 공백을 삽입
+## false - 메서드 호출 이름과 여는 괄호 사이의 공백을 제거
+csharp_space_between_method_call_name_and_opening_parenthesis = false
+## true - 여는 괄호 뒤 및 메서드 호출의 닫는 괄호 앞에 공백 문자를 삽입
+## false - 여는 괄호 뒤 및 메서드 호출의 닫는 괄호 앞에서 공백 문자를 제거
+csharp_space_between_method_call_parameter_list_parentheses = false
+## true - 메서드 선언에서 빈 매개 변수 목록 괄호 안에 공백을 삽입
+## false - 메서드 선언에서 빈 매개 변수 목록 괄호 안의 공백을 제거
+csharp_space_between_method_declaration_empty_parameter_list_parentheses = false
+## true -메서드 선언에서 메서드 이름과 여는 괄호 사이에 공백 문자를 배치
+## false -메서드 선언에서 메서드 이름과 여는 괄호 사이에서 공백 문자를 제거
+csharp_space_between_method_declaration_name_and_open_parenthesis = false
+## true - 여는 괄호 뒤 및 메서드 선언 매개 변수 목록의 닫는 괄호 앞에 공백 문자를 삽입
+## false - 여는 괄호 뒤 및 메서드 선언 매개 변수 목록의 닫는 괄호 앞에서 공백 문자를 제거
+csharp_space_between_method_declaration_parameter_list_parentheses = false
+## control_flow_statements - 제어 흐름 문의 괄호 사이에 공백을 삽입
+## expressions - 식의 괄호 사이에 공백을 삽입
+## type_casts - 형식 캐스트의 괄호 사이에 공백을 삽입
+## false - 무시
+csharp_space_between_parentheses = false
+## true - 비어 있지 않은 대괄호 [ 0 ] 안에 공백 문자를 삽입
+## false - 비어 있지 않은 대괄호 [0] 안에서 공백 문자를 제거
+csharp_space_between_square_brackets = false
+
+# Wrapping preferences: 줄 바꿈 옵션
+## true - 코드 블록을 한 줄에 유지
+## false - 코드 블록을 새 줄에 유지
+csharp_preserve_single_line_blocks = true
+## true - 문과 멤버 선언을 동일한 줄에 유지
+## false - 문과 멤버 선언을 다른 줄에 유지
+csharp_preserve_single_line_statements = false
+
+#### .Net Naming styles ####
+
+# Naming rules
+
+dotnet_naming_rule.interface_should_be_begins_with_i.severity = suggestion
+dotnet_naming_rule.interface_should_be_begins_with_i.symbols = interface
+dotnet_naming_rule.interface_should_be_begins_with_i.style = begins_with_i
+
+dotnet_naming_rule.types_should_be_pascal_case.severity = suggestion
+dotnet_naming_rule.types_should_be_pascal_case.symbols = types
+dotnet_naming_rule.types_should_be_pascal_case.style = pascal_case
+
+dotnet_naming_rule.non_field_members_should_be_pascal_case.severity = suggestion
+dotnet_naming_rule.non_field_members_should_be_pascal_case.symbols = non_field_members
+dotnet_naming_rule.non_field_members_should_be_pascal_case.style = pascal_case
+
+# Symbol specifications
+
+dotnet_naming_symbols.interface.applicable_kinds = interface
+dotnet_naming_symbols.interface.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
+dotnet_naming_symbols.interface.required_modifiers =
+
+dotnet_naming_symbols.types.applicable_kinds = class, struct, interface, enum
+dotnet_naming_symbols.types.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
+dotnet_naming_symbols.types.required_modifiers =
+
+dotnet_naming_symbols.non_field_members.applicable_kinds = property, event, method
+dotnet_naming_symbols.non_field_members.applicable_accessibilities = public, internal, private, protected, protected_internal, private_protected
+dotnet_naming_symbols.non_field_members.required_modifiers =
+
+# Naming styles
+
+dotnet_naming_style.pascal_case.required_prefix =
+dotnet_naming_style.pascal_case.required_suffix =
+dotnet_naming_style.pascal_case.word_separator =
+dotnet_naming_style.pascal_case.capitalization = pascal_case
+
+dotnet_naming_style.begins_with_i.required_prefix = I
+dotnet_naming_style.begins_with_i.required_suffix =
+dotnet_naming_style.begins_with_i.word_separator =
+dotnet_naming_style.begins_with_i.capitalization = pascal_case
